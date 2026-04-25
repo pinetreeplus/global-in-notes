@@ -13,9 +13,12 @@
     - [break과 continue](#break과-continue)
     - [Nested Loop](#nested-loop)
   - [기초적인 I/O(입출력)](#기초적인-io입출력)
-  - [Intermediate](#intermediate)
-    - [OOP 개념](#oop-개념)
-    - [Class란](#class란)
+  - [Class](#class)
+  - [OOP 심화개념](#oop-심화개념)
+    - [Overloading](#overloading)
+    - [Overriding](#overriding)
+    - [Encapsulation](#encapsulation)
+    - [Inheritance](#inheritance)
     - [Java의 Access](#java의-access)
 
 ## Type
@@ -110,7 +113,15 @@ if (weather == 1) {
 
 ### while statement
 
-`while(condition){}`의 `condition`이 참일 동안 반복합니다.
+`while(condition){}`의 `condition`이 참일 동안 반복합니다. `while(true)`의 경우 따로 종료 않는 한 무한 반복합니다.
+
+```java
+int i = 0;
+while (i < 5) {
+  System.out.println(i);
+  i++;
+}
+```
 
 ### break과 continue
 
@@ -133,21 +144,14 @@ for (int i = 0; i < 6; i++) {
 
 ### Nested Loop
 
-Loop문은 
 Nested Loop는 **여러 루프문이 중첩**되어 있는 것입니다 (e.g`for` 문 안에서 `for`문이 돌아감).
 
 ## 기초적인 I/O(입출력)
 
-## Intermediate
 
-### OOP 개념
-- Overloading
-- Overriding
-- Encapsulation
-- Inheritance
-- Multiple Inheritance
 
-### Class란
+## Class
+
 - `Class`:
 - Field
 - Constructor
@@ -155,7 +159,15 @@ Nested Loop는 **여러 루프문이 중첩**되어 있는 것입니다 (e.g`for
 - this
 - new
 - Instance
+- 
+## OOP 심화개념
 
+### Overloading
+### Overriding
+### Encapsulation
+### Inheritance
+
+Multiple Inheritance
 ### Java의 Access
 - static
 - Access Modifier(public/protected/default/private)
