@@ -6,6 +6,7 @@
     - [Arithmetic operator(수학 연산자)](#arithmetic-operator수학-연산자)
     - [Assignment Operator(할당 연산자)](#assignment-operator할당-연산자)
     - [Comparison Operator(비교 연산자)](#comparison-operator비교-연산자)
+    - [Logical Operator (논리 연산자)](#logical-operator-논리-연산자)
   - [Type](#type)
     - [Primitive Type](#primitive-type)
     - [Non-Primitive Type](#non-primitive-type)
@@ -19,22 +20,28 @@
     - [for statement](#for-statement)
     - [while statement](#while-statement)
     - [break과 continue](#break과-continue)
+    - [switch statement](#switch-statement)
     - [Nested Loop](#nested-loop)
-  - [기초적인 I/O(입출력)](#기초적인-io입출력)
 
 ## 기초적인 구조
 
-자바를 실행하기 위해서는 `main()` 메서드가 있어야 합니다. IDE에서 `psvm`을 치고 자동완성한다면 다음과 같이 뜰 겁디나.
+자바를 실행하기 위해서는 `main()` 메서드가 있어야 합니다. IDE에서 `psvm`을 치고 자동완성한다면 다음과 같이 뜰 겁니다.
 
 ```java
-public static void main(String[] args){
-//내용
+public class Main{
+  public static void main(String[] args){
+  //내용
   System.out.println("Hello World");
+  }
 }
+
 ```
 
-어차피 다들 자동완성 하고 나중에 배우니 어렵게 생각 마시고 `main()`이라는거 안에 `{}` 사이 있는 내용만 실행된다 알고 계시면 됩니다. 
-Java의 경우 Frontend에서 배웠던 HTML/CSS/JS와 달리 statement 뒤 세미콜론(`;`)이 필수입니다.
+어차피 자동완성되고 나중에 배우니 어렵게 생각 마시고 `main()`이라는거 안에 `{}` 사이 있는 내용만 실행된다 알고 계시면 됩니다. 
+
+`main()`은 `Class` 안에 있어야 하며 파일명 역시 Class와 같아야 합니다(확장자의 경우 `.java`). Java의 경우 Frontend에서 배웠던 HTML/CSS/JS와 달리 statement 뒤 세미콜론(`;`)이 필수입니다.
+
+터미널에 내용을 출력하는 부분은 `System.out.println("Hello World");`로 `System.out` 안에 `println()`이라는 출력을 하는 메서드가 있는 것입니다.
 
 ## 연산자(operator)
 
@@ -82,6 +89,52 @@ System.out.println("Total savings: " + savings);
 ```
 
 ### Comparison Operator(비교 연산자)
+
+**두 value를 비교**할 때 쓰입니다(`if()`의 condition부 등). `return`(반환)하는 값은 `true`, `false`입니다.
+
+JavaScript와 달리 다른 Type을 비교할 수 없습니다. JS의 `===`, `>==` 등이 default라 보시면 됩니다.
+
+- `==`: 양측의 값이 같다 
+- `!=`: 같지 않다
+- `>`: 크다
+- `<`: 작다
+- `>=`: 이상
+- `<=`: 이하
+
+```java
+int age = 18;
+
+System.out.println(age >= 18); // true
+System.out.println(age < 18);  // false
+```
+
+### Logical Operator (논리 연산자)
+
+여러 조건을 충족하는지 확인 하기 위해 사용할 연산자입니다(e.g, 얘는 10살 넘고 한국에 사나?).
+
+3개가 있으며 `AND`, `OR`, `NOT`에 해당합니다. `return`(반환)하는 값은 `true`, `false`입니다.
+
+- `&&`: 논리 `AND`
+- `||`: 논리 `OR`
+- `!`: 논리 `NOT`
+
+논리게이트에 익숙하지 않으시면:
+
+- A `AND` B 는 양측이 모두 참이면 `true`, 그 외 `false`
+- A `OR` B 는 양측 중 하나라도 참이면 `true`, 모두 거짓일 때만 `false`
+- `NOT` A는 A가 `true`였을 시 `false`, `false` 였을 시 `true`가 됨
+
+```java
+boolean isLoggedIn = true;
+boolean isAdmin = false;
+
+// 로그인 돼 있으면서 Admin이 아니면 Regular User(둘 다 충족해야)
+System.out.println("Regular user: " + (isLoggedIn && !isAdmin));
+// 로그인 돼 있거나 Admin이 아니면 Access 있음.(둘 중 하나라도 충족 시)
+System.out.println("Has access: " + (isLoggedIn || isAdmin));
+// 로그인이 안 되어 있을 시. isLoggedIn의 반대를 출력 합니다.
+System.out.println("Not logged in: " + (!isLoggedIn));
+```
 
 ## Type
 
@@ -141,7 +194,9 @@ int yourNum = 10;
 
 ## Array
 
-**`Array`는 여러 값을 하나의 변수에 저장하기 위해 사용되는 타입입니다.** [좀 더 자세한 설명](https://www.geeksforgeeks.org/java/arrays-in-java/)
+`Array`의 내용이 길어져 기초 설명 후 상세 내용을 [링크](./details/string.md)해둡니다.
+
+**`Array`는 여러 값을 하나의 변수에 저장하기 위해 사용되는 타입입니다.**
 
 Non Primitive 타입의 일종이며 배열이라고도 합니다. **다른 타입 뒤 square bracket(`[]`)을 사용하며 선언(declare)합니다. Curly brace(`{}`) 안 comma로 구분된 리스트에 값이 들어갑니다. index는 `0`부터 시작입니다!** 5개 들어있다면 index는 0~4입니다.
 
@@ -157,14 +212,38 @@ String[] cars = new String[]{"Volvo", "BMW", "Ford", "Mazda"};
 String[] cars;
 String[] cars = new String[3];
 
+// 0번은 "Volvo"
 cars[0] = "Volvo";
+// 1번은 "Volvo"
 cars[1] = "Volkawagen"; 
+// 2번은 "Volvo"
 cars[2] = "Hyundai"; 
 ```
 
 ## String
 
-`String` 역시 Non Primitive 타입의 일종입니다. 한 글자만을 표현하는 `char`와 달리 문자열을 표현합니다.
+`String`도 내용이 길어져 상세 내용을 [링크](./details/string.md)해 둡니다.
+
+`String` 역시 Non Primitive 타입의 일종입니다. 한 글자만을 표현하는 `char`와 달리 문자열을 표현합니다. `String`은 사실 `Object`이며 사용할 수 있는 다양한 `method`가 있습니다.
+
+String을 만들기 위해서는 일반 변수 선언처럼 한 후 `"`으로 감싸주면 됩니다. `'`는 `char`에서만 사용 가능합니다.
+
+```java
+String greeting = "Hello";
+```
+
+`length()`로 String의 길이를 가져올 수 있으며 `+` 연산자를 `String` 사이에 사용하여 연결 할 수 있습니다.
+
+```java
+// 길이
+String txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+System.out.println("txt의 길이는: " + txt.length());
+
+// 이름 합치기
+String firstName = "John";
+String lastName = "Doe";
+System.out.println(firstName + " " + lastName);
+```
 
 ### 주석(comment)
 
@@ -222,6 +301,20 @@ while (i < 5) {
 }
 ```
 
+만약 condition과 무관하게 1회 실행 후 `while()`문을 돌리고 싶다면 `do{}`를 사용합니다.
+
+```java
+int i = 0;
+// 0 프린트 후 ++;
+do {
+  System.out.println(i);
+  i++;
+} // i==1 상태로 while문 시행
+while (i < 5){
+
+};
+```
+
 ### break과 continue
 
 **루프문에서 벗어날 때 `break`를 사용합니다.**
@@ -241,9 +334,10 @@ for (int i = 0; i < 6; i++) {
 
 위 예제에서 `i==2`인 경우 `2`를 프린트하지 않고(`for`의 `i==2` iteration의 나머지를 스킵) `i==3`으로 넘어가며, `i==4`인 경우 `for` loop 자체에서 벗어납니다. 5부터 실행 x
 
+### switch statement
+
+`switch` 역시 `if`문 처럼 conditional branch의 일종입니다.
+
 ### Nested Loop
 
 Nested Loop는 **여러 루프문이 중첩**되어 있는 것입니다 (e.g`for` 문 안에서 `for`문이 돌아감).
-
-## 기초적인 I/O(입출력)
-
