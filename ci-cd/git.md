@@ -3,8 +3,9 @@
 - [git](#git)
   - [git 이거만 알자](#git-이거만-알자)
 
-
 ## git 이거만 알자
+
+<img src="./img/git-architecture.png" width="500">
 
 깃이 관리하는 프로젝트를 **Repository(레포/repo)**라 하고
 자신의 컴퓨터에 있는 코드가 **Local** 깃허브에 있는 코드를 **Remote 레포(Repository)**라고 부릅니다.
