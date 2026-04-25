@@ -11,7 +11,7 @@
   - [texts](#texts)
   - [lists](#lists)
   - [table](#table)
-  - [link and media](#link-and-media)
+  - [link와 media](#link와-media)
     - [a](#a)
     - [img](#img)
     - [video](#video)
@@ -61,43 +61,49 @@ Boolean(`true`/`false`) attribute은 value 없이 적히는 경우가 많으며 
 
 [Head 예문](./03-html/head.html)
 
-- `<meta>`: The `<meta>` HTML element represents metadata that cannot be represented by other meta-related elements, such as `<base>`, `<link>`, `<script>`, `<style>`, or `<title>`.
-    - `charset="UTF-8"`: Supports multi-lang. Commonly used text encoding for web.
-    - `name`: Attribute specifying the type of meta element. Adding `"author"` and `"description"` may be helpful
-    - `content`: Actual meta content.
-- `<title>`: Adds a title
-- `<style>`: Defines CSS to be used
-- `<script>`: Defines JS to be used
+- `<meta>`: `<meta>` HTML Element는 `<base>`, `<link>`, `<script>`, `<style>`, `<title>` 등과 같이 다른 태그로 표현 못하는 메타더이터를 표현합니다.
+    - `charset="UTF-8"`: 다국어 지원하는 인코딩으로 웹에서 흔히 쓰임.
+    - `name`: 메타데이터의 타입을 지시하는 Attribute. `"author"`, `"description"` 등이 있음
+    - `content`: 실제 메타 컨텐츠
+- `<title>`: 제목 추가(맨 상단에 뜸/북마크 시에도 뜸)
+- `<style>`: CSS 지정
+- `<script>`: 스크립트 지정
 
-There are some `<link>`s added to the `<head>` section. Examples are:
+`<head>`에 흔히 추가 되는 `<link>`가 있습니다.
 
-- `<link rel="icon" href="source/image.png" />`
-- `<link rel="stylesheet" href="source/stylesheet.css" />`
+```html
+<link rel="icon" href="source/image.png" />
+<link rel="stylesheet" href="source/stylesheet.css" />
+```
 
-And an external JS script is added as:
+외부 JS 스크립트 연결은 `<link>`가 아닌 `<script>` 태그를 사용합니다:
 
-- `<script href="source/script.js" />`
+```html
+<script href="source/script.js" />
+```
 
 ### body  
 
-- `<main>`: Main part of the page only to be used once per document.
-- `<aside>`: Side bar
-- `<nav>`: Navigation bar
-- `<footer>`: Footer
-- `<section>`: Generic standalone section of a document. Sections should always have a heading, with very few exceptions.
-- `<article>`: Self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable (e.g., in syndication).
+`<body>` 태그 내에는 일반적으로 다음과 같은 섹션이 있습니다.
 
-[Line breaks](./03-html/line-breaks.html) are used as follows:
+- `<main>`: Document 당 하나씩만 쓰이는 내용부
+- `<aside>`: 사이드바
+- `<nav>`: 네이베이션 바
+- `<footer>`: 푸터(아래 연락처 등)
+- `<section>`: Document의 독립적인 부분. 일부 예외를 제외하고 항상 header를 사용해야 합니다.
+- `<article>`: Document에서 자기완성적인 부분으로 독립적으로 배포/재사용 가능하여야 합니다.
 
-- `<br>`: Line break element; it is the only way to force a rigid structure in a situation where you want a series of fixed short lines.
-- `<hr>`: Creates a horizontal rule in the document that denotes a thematic change in the text (such as a change in topic or scene).
+[줄바꿈](./03-html/line-breaks.html)은 다음과 같이 사용됩니다.:
+
+- `<br>`: 줄 바꿈 element
+- `<hr>`: 테마의 변경 등에 사용되며 줄바꿈과 함계 수평방향으로 직선을 긋습니다.
 
 ### non semantic wrappers
 
-[div-span](./03-html/div-span.html) are non-semantic wrappers. Use other tags where you can.
+[div-span](./03-html/div-span.html) 은 semantic하지 않은 wrapper입니다. 다른 태그가 사용 가능하면 그걸 사용하는게 좋습니다.
 
-- `<div>`: Generic container for flow content. It has no effect on the content or layout until styled in some way using CSS
-- `<span>`: generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element is appropriate. `<span>` is very much like a `<div>` element, but `<div>` is a block-level element whereas a `<span>` is an inline-level element.
+- `<div>`: `block` 레벨 컨테이너입니다.
+- `<span>`: `inline` 레벨 컨테이너입니다.
 
 ## texts
 
@@ -146,8 +152,8 @@ Properties
 
 - `<caption>`: 테이블의 캡션(or title)을 설정해서 표의 이름 설정이나 설명을 함
 - `<tr>`: 표의 한 줄
-- `<th>`: 표의 헤더를 표현하며 `<tr>`의 child Element
-- `<td>`: Defines a cell of a table that contains data and may be used as a child of the `<tr>` element.
+- `<th>`: 표의 헤더를 표현하며 `<tr>` Element의 child가 될 수 있습니다
+- `<td>`: 표의 셀 하나를 표현하며 `<tr>` Element의 child가 될 수 있습니다.
 
 아래는 `<table>` 내에서의 구획 구분
 
@@ -160,63 +166,52 @@ CSS 스타일링 등을 목적으로 열을 그룹 지을 수 있음
 - `<colgroup>`, `<col>`: `<colgroup>`은 `<table>` Element 직후 설정되어야 함
   - `span`: 몇 개의 열이나 span(차지)할지
 
-## link and media
+## link와 media
 
-Hyperlinks are features of an HTML document that, when clicked or otherwise activated, cause the browser to navigate to other documents or resources, sometimes specific parts of documents. 
+하이퍼링크는 클릭 또는 다른 방식으로 activated 된 경우 다른 리소스, 페이지, 페이지의 부분 등으로 navigate하게 하는 요소입니다. 웹에서의 모든 리소스는 **URL (Uniform Resource Locator)**라고 하이퍼링크가 가르키는 주소가 있습니다.
 
-Each resource on the web has an address, known as a **URL (Uniform Resource Locator)**, which hyperlinks point to.
-
-Elements like `<img>` and `<video>` are sometimes referred to as replaced elements. This is because the element's content and size are defined by an external resource.
+`<img>`나 `<video>` 등은 **replaced elements** 라고도 불립니다. 이는 해당 Element의 크기나 사이즈 등이 외부 리소스에 의해 정해지기 때문입니다.
 
 ### a
 
-[`a`](./03-html/links.html), with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.
+[`a`](./03-html/links.html)는 `href` attribute와 함께 웹페이지, 파일, 이메일 주소, 같은 페이지의 다른 부분 등으로의 하이퍼 링크를 생성합니다.
 
 Attributes:
 
-- `href`: The URL that the hyperlink points to.
-- `target`: Where to display the linked URL,
-- `title`: Contains additional information about the link. Hovering over the link displays the title as a tooltip
+- `href`: 하이퍼링크가 가르키는 주소
+- `target`: 어디에 링크된 URL을 표시할지
+- `title`: 링크에 대한 추가 정보로 마우스를 올리면 설명으로 뜹니다.
 
-In URLs, `#` represent fragment identifier pointing to a specific point(id) in a page.
-
-When linking to non-html resources, leave a clear sign.
+URL에서 `#`는 **fragment identifier**로 같은 페이지 안의 특정 부분(`id`)을 가르킵니다.
 
 Emails can also be linked to, with `mailto:`. the use of the question mark (`?`) to separate the main URL from the field values, and ampersands (`&`) to separate each field in the `mailto:` URL. This is standard URL query notation. 
 
 ### img
 
-[`<img>`](./03-html/image.html) tag embeds an image into the document. It is a void element, which cannot have any child content. It needs `src` and `alt` attributes to be useful.
+[`<img>`](./03-html/image.html) 태그는 document에 이미지를 embed 합니다. 이는 **void element**로 자식 컨텐츠를 가질 수 없습니다(closing tag 없음). 제대로 사용하기 위해서는 `src`와 `alt` attribute이 필요합니다.
   
 Attributes:
 
-- `src`: The image URL. At least one of `src` and `srcset` is required for an `<img>` element
-- `srcset`: One or more strings separated by commas, indicating possible image sources for the user agent to use.
-  - `<number>x`: Use this when the image stays the same size on the screen, but you want to serve a sharper version to high-density (Retina) displays.
-  - `<number>w`: Switch based on the width of the browser.
-- `alt`: Defines text that can replace the image in the page.
-- `width`: Width
-- `height`: height
-- `sizes`: specify the layout width of the image for each of a list of media queries, or auto for lazy-loaded images to allow the browser to automatically select an image to display based on the layout size of the element. 
+- `src`: 이미지 URL. `src`나 `srcset` 둘 중 하나는 `<img>` Element에 필수입니다.
+- `alt`: 대체 텍스트
+- `width`: 가로 길이
+- `height`: 세로 길이
+- `sizes`: specify the layout width of the image for each of a list of media queries, or `auto` for lazy-loaded images to allow the browser to automatically select an image to display based on the layout size of the element. 
 
-Images can be annotated by captions with `<figure>`.
+이미지는 `<figure>`로 설명 텍스트를 곁들일 수 있습니다.
 
 ### video
 
-[`<video>`](./03-html/video.html) element allows you to embed a video. Some features to note are:
+[`<video>`](./03-html/video.html) Element는 비디오를 embed 가능하게 해줍니다:
 
-- `src`: Contains a path to the video you want to embed.
-- `controls`: You must either use the `controls` attribute to include the browser's own control interface, or build your interface using the appropriate JavaScript API.
+- `src`: 비디오의 경로
+- `controls`: 비디오 컨트롤 바. 이걸 쓰던가 JS로 직접 만들어야 합니다.
 
-Paragraph inside the `<video>` tags are **fallback content** to be displayed if the page doesn't support the `<video>` element.
+`<video>` 태그 안의 `<p>`는 페이지가  `<video>` Element를 지원 안 할시 보여지는 **fallback content** 입니다.
 
-Using multiple sources help since it is possible that the video might not play for you, because different browsers support different video (and audio) formats. 
+여러 source를 사용 시 한 포맷이 작동 안 해도 유저가 비디오를 실행할 수 있을 확률이 올라갑니다. `src`를 `<video>` Element에서 뺀 후 별도의 `<source>` Element로 나열할 수 있습니다.이 경우 브라우저가 `<source>` 리스트를 넘기면서 첫 번쨰로 재생 가능한 비디오(포맷)을 사용할 것입니다. `type` Attribute는 **MIME type**을 포함하여 브라우저가 모르는 포맷을 바로 넘길 수 있게 합니다. 지시 안 할시 비디오를 일일히 로드해 봅니다.
 
-You can take out the `src` out of the `<video>` element and include separate `<source>` elements. In this case the browser will go through the `<source>` elements and play the first one that it has the codec to support.
-
-`type` attribute contains the **MIME type** and browsers can use the type to immediately skip videos they don't understand. If not specified, browser will manually load.
-
-Other `<video>` features:
+추가 `<video>` property:
 
 - `width`: 가로 길이
 - `height`: 세로 길이
@@ -263,7 +258,7 @@ Other `<video>` features:
 - `date`
 - `file`
 - `password`
-- 
+  
 Properties
  
 - `name`: form control의 이름. form과 합께 name/value 쌍의 일부로 제출됨.
