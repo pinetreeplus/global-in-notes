@@ -30,8 +30,8 @@
 ```java
 public class Main{
   public static void main(String[] args){
-  //내용
-  System.out.println("Hello World");
+    //내용
+    System.out.println("Hello World");
   }
 }
 
@@ -39,7 +39,7 @@ public class Main{
 
 어차피 자동완성되고 나중에 배우니 어렵게 생각 마시고 `main()`이라는거 안에 `{}` 사이 있는 내용만 실행된다 알고 계시면 됩니다. 
 
-`main()`은 `Class` 안에 있어야 하며 파일명 역시 Class와 같아야 합니다(확장자의 경우 `.java`). Java의 경우 Frontend에서 배웠던 HTML/CSS/JS와 달리 statement 뒤 세미콜론(`;`)이 필수입니다.
+`main()`은 `Class` 안에 있어야 하며 파일명 역시 Class 이름과 같아야 합니다(확장자의 경우 `.java`). Java의 경우 Frontend에서 배웠던 HTML/CSS/JS와 달리 statement 뒤 세미콜론(`;`)이 필수입니다.
 
 터미널에 내용을 출력하는 부분은 `System.out.println("Hello World");`로 `System.out` 안에 `println()`이라는 출력을 하는 메서드가 있는 것입니다.
 
@@ -198,6 +198,8 @@ int yourNum = 10;
 
 Non Primitive 타입의 일종이며 배열이라고도 합니다. **다른 타입 뒤 square bracket(`[]`)을 사용하며 선언(declare)합니다. Curly brace(`{}`) 안 comma로 구분된 리스트에 값이 들어갑니다. index는 `0`부터 시작입니다!** 5개 들어있다면 index는 0~4입니다.
 
+`<Array-이름>[index]`의 형태로 해당 Array의 `index`번째 value에 접근 가능합니다.
+
 ```java
 // declaration과 동시에 assignment 진행
 int[] myNum = {10, 20, 30, 40};
@@ -205,17 +207,22 @@ int[] myNum = {10, 20, 30, 40};
 // declaration과 assignment 따로
 String[] cars;
 String[] cars = new String[]{"Volvo", "BMW", "Ford", "Mazda"};
+```
 
+``` java
 // declaration, 메모리 공간(String 3개) 할당, assignment 다 따로
 String[] cars;
 String[] cars = new String[3];
 
 // 0번은 "Volvo"
-cars[0] = "Volvo";
-// 1번은 "Volvo"
+cars[0] = "Volkawagen";
+// 1번은 "Volkawagen"
 cars[1] = "Volkawagen"; 
-// 2번은 "Volvo"
+// 2번은 "Hyundai"
 cars[2] = "Hyundai"; 
+
+// cars Array의 1번 index 출력, Volkswagen
+System.out.println(cars[1]);
 ```
 
 ## String
@@ -334,11 +341,63 @@ for (int i = 0; i < 6; i++) {
 
 ### switch statement
 
-`switch` 역시 `if`문 처럼 conditional branch의 일종입니다.
+`switch` 역시 `if`문 처럼 conditional branch의 일종입니다. `expression`부에 argument가 주어지면 그에 맞는 case로 점프하는 거라 생각하면 됩니다. `break`를 사용하지 않을 시 점프한 해당 `case`에서 끝나지 않고 그 하위 `case`와 `default`까지 모두 돕니다. 모든 `case`가 맞지 않다면 `default`를 실행합니다.
+
+문법의 경우:
+
+```
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+```
+
+예시:
+
+```java
+int day = 4;
+switch (day) {
+  case 1:
+    System.out.println("Monday");
+    break;
+  case 2:
+    System.out.println("Tuesday");
+    break;
+  case 3:
+    System.out.println("Wednesday");
+    break;
+  case 4:
+    System.out.println("Thursday");
+    break;
+  case 5:
+    System.out.println("Friday");
+    break;
+  case 6:
+    System.out.println("Saturday");
+    break;
+  case 7:
+    System.out.println("Sunday");
+    break;
+} // Outputs "Thursday" (day 4)
+```
 
 ### Nested Loop
 
 Nested Loop는 **여러 루프문이 중첩**되어 있는 것입니다 (e.g`for` 문 안에서 `for`문이 돌아감).
+
+참고: Nested Loop의 경우 2개의 경우 `O(n^2)`, 3개이면 `O(n^3)` 식으로 `Time Complexity(시간 복잡도)`가 올라갑니다. 입력 데이터(`n`부분)이 작다면 상관 없지만 커진다면:
+
+- 순서를 유지할 필요가 없다면 `Map` 구조의 적합한 Data Structure (탐색시 Time Complexity `O(1)`).
+- 순서가 필요하거나 범위를 지정해야 하는 경우 `Tree` 중에서 찾는게 좋을 수 있습니다.
+- Nested Loop를 쓰는 경우에도 목적 완료시 `break` 등을 통해 loop를 빠져나오게 하는 편이 Average Complexity 라도 줄일 수 있습니다.
+
+만약 아주 적은 메모리(e.g, 임베디드)밖에 없다면 `Map`이 Space Complexity(공간 복잡도)면에서 무리가 갈 수 있지만 현대 세상에서는 1초와 1분 차이가 메모리 몇 MB보다 중요합니다.
 
 ## Method
 
@@ -347,4 +406,38 @@ Java의 **메서드(method)는 호출(call) 되었을때 실행되는 코드 블
 - **함수(function)**: 특정 작업을 처리하고 값(value)를 반환(return)할 수 있는 코드 블록. 일반적으로 독립적.
 - **메서드(method)**: OOP(Object-Oriented Programming) 언어에서 Class나 Object와 연관되어 있는 function. Object의 데이터를 조작하거나 Class의 필드나 다른 메서드에 접근 가능.
 
-이므로 function이 독립적으로 존재 불가하고 Class 안에 있는 Java에서는 거의 method라는 말만 들을 것입니다.
+이므로 function이 독립적으로 존재 불가하고 method가 Class 안에서만 declare(선언) 가능한 Java에서는 거의 method라는 말만 들을 것입니다. 처음 `main()`을 배울 떄 `Main` Class라는 껍데기가 있어야 했던 이유입니다.
+
+```java
+public class Main {
+  static void myMethod() {
+    // 실행할 코드
+    System.out.println("메서드가 생성됨!");
+  }
+  public static void main(String[] args){
+    // static이므로 같은 Class 내에서 myMethod()로 실행 가능
+    myMethod();
+  } 
+}
+```
+
+위 예시 코드를 살펴 보자면:
+
+**`public class Main`**:
+
+- `public`:
+- `class`: 클래스를 만듦을 의미합니다.
+- `Main`: 클래스의 이름입니다. 이는 Java 파일의 이름이어야 합니다(e.g, `Main.java`).
+
+**`static void myMethod()`**
+
+- `static`: method가 특정 object가 아니라 Class 직속이라는 겁니다. 새 Object(Instance, 실체)를 만들 필요 없이 Class(템플릿)에서 바로 call(호출) 가능
+- `void`: `return`(반환)하는 value(값)이 없다는 것을 의미합니다. 
+- `myMethod()`: 생성된 메서드의 이름입니다. 메서드는 모두 이름 뒤 `()`를 붙여야 합니다(`()`까지가 이름이라 생각하기).
+- `()` 내부: `,`로 나뉜 argument를 줄 수 있습니다.
+
+그럼 **`public static void main(String[] args)`**도 분석이 가능할 겁니다.
+
+같은 Class 내부라면 `static` method를 바로 `<method-이름>()` 형식으로 실행 가능합니다. 만약 `myMethod()`가 `static`이 아니었다면(`==` Class가 아닌 Object 소속이라면) `new` 키워드로 새 Instance(Object)를 만든 후 사용이 가능합니다.
+
+다른 Class인 경우 해당 Class를 `import`한 후 사용할 수 있습니다.
