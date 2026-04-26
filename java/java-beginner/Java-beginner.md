@@ -425,18 +425,18 @@ public class Main {
 
 **`public class Main`**:
 
-- `public`:
+- `public`: 다른 Class들이 자유로이 해당 Class에 Access (접근) 가능하다는 Access Modifier입니다. `private` 등의 타 Access Modifier의 경우 나중에 배웁니다.
 - `class`: 클래스를 만듦을 의미합니다.
 - `Main`: 클래스의 이름입니다. 이는 Java 파일의 이름이어야 합니다(e.g, `Main.java`).
 
 **`static void myMethod()`**
 
 - `static`: method가 특정 object가 아니라 Class 직속이라는 겁니다. 새 Object(Instance, 실체)를 만들 필요 없이 Class(템플릿)에서 바로 call(호출) 가능
-- `void`: `return`(반환)하는 value(값)이 없다는 것을 의미합니다. 
+- `void`: `return`(반환)하는 value(값)이 없다는 것을 의미합니다. `int`, `float`,`String` 등을 반환할 시 해당 Type을 적어둡니다. `String[]`이나 Object 등도 return 가능합니다.
 - `myMethod()`: 생성된 메서드의 이름입니다. 메서드는 모두 이름 뒤 `()`를 붙여야 합니다(`()`까지가 이름이라 생각하기).
 - `()` 내부: `,`로 나뉜 argument를 줄 수 있습니다.
 
-그럼 **`public static void main(String[] args)`**도 분석이 가능할 겁니다.
+그럼 **`public static void main(String[] args)`**도 분석이 가능할 겁니다. `public`하고 `static`하며 return 값이 `void`(==없는) `main()` 함수이며 `String[]` 배열인 argument `args`를 parameter로 받는 다는 겁니다. `args`의 경우 말했듯 String의 Array이며 IDE 등에서 설정 가능합니다.
 
 같은 Class 내부라면 `static` method를 바로 `<method-이름>()` 형식으로 실행 가능합니다. 만약 `myMethod()`가 `static`이 아니었다면(`==` Class가 아닌 Object 소속이라면) `new` 키워드로 새 Instance(Object)를 만든 후 사용이 가능합니다.
 
