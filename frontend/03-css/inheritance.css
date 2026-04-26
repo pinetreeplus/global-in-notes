@@ -1,0 +1,18 @@
+/* inherit property의 사용예시*/
+p:nth-of-type(2) {
+  a {
+    text-decoration: inherit;
+    color: inherit;
+  }
+  em {
+    font-style: inherit;
+  }
+  strong {
+    font-weight: inherit;
+  }
+}
+
+/* initial property의 사용예시*/
+/* revert property의 사용예시*/
+/* revert-layer property의 사용예시*/
+/* unset property의 사용예시*/

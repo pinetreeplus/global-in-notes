@@ -22,7 +22,7 @@
 
 ## 기초
 
-HTML(HyperText Markup Language)는 **마크업 언어**로 브라우저에게 어떻게 문서의 구조를 짤지 말합니다. HTML은 `.html` 확장자의 **HTML documents**라는 문서에 있습니다. `index.html`는 일반적으로 홈페이지의 컨텐츠로 연결이 됩니다.
+HTML(HyperText Markup Language)는 **마크업 언어**로 브라우저에게 어떻게 문서의 구조를 짤지 말합니다. HTML은 `.html` 확장자의 **HTML**이라는 문서에 있습니다. `index.html`는 일반적으로 홈페이지의 컨텐츠로 연결이 됩니다.
 
 주석(Comment)는 `<!--` 와  `-->` 사이의 텍스트입니다.
 
@@ -93,21 +93,21 @@ Boolean(`true`/`false`) attribute은 value 없이 적히는 경우가 많으며 
 - `<section>`: Document의 독립적인 부분. 일부 예외를 제외하고 항상 header를 사용해야 합니다.
 - `<article>`: Document에서 자기완성적인 부분으로 독립적으로 배포/재사용 가능하여야 합니다.
 
-[줄바꿈](./03-html/line-breaks.html)은 다음과 같이 사용됩니다.:
+[줄바꿈 예문](./03-html/line-breaks.html)은 다음과 같이 사용됩니다.:
 
 - `<br>`: 줄 바꿈 element
 - `<hr>`: 테마의 변경 등에 사용되며 줄바꿈과 함계 수평방향으로 직선을 긋습니다.
 
 ### non semantic wrappers
 
-[div-span](./03-html/div-span.html) 은 semantic하지 않은 wrapper입니다. 다른 태그가 사용 가능하면 그걸 사용하는게 좋습니다.
+[div-span 예문](./03-html/div-span.html) 은 semantic하지 않은 wrapper입니다. 다른 태그가 사용 가능하면 그걸 사용하는게 좋습니다.
 
 - `<div>`: `block` 레벨 컨테이너입니다.
 - `<span>`: `inline` 레벨 컨테이너입니다.
 
 ## texts
 
-[Texts](./03-html/texts.html)
+[Text 작업 예문](./03-html/texts.html)
 
 - `<h1>`~`<h6>`: 헤더. `h1`은 document 당 1개씩 사용하고 총 태그의 계층이 페이지 당 3개가 넘지 않는 것이 좋음
 - `<p>`: 문단
@@ -266,7 +266,7 @@ Properties
 - `autofocus`: Boolean으로 해당 Element가 페이지 로드 시 `focus` 되어야 할지 표기
 - `checked`: `radio`와 `checkbox`는 Boolean(true/falce) `checked` property가 있을 수 있음
 
-[`<textarea>`](./03-html/textarea.html)는 여러줄 짜리 텍스트 입력창을 생셩하는 `<input>`과 별개의 Element입니다.
+[`<textarea>`](./03-html/textarea.html)는 여러줄 짜리 텍스트 입력창을 생셩하며 `<input>`과 별개의 Element입니다.
 
 ### select
 

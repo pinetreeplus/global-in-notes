@@ -11,7 +11,6 @@
     - [Primitive Type](#primitive-type)
     - [Non-Primitive Type](#non-primitive-type)
   - [변수](#변수)
-    - [변수의 생성](#변수의-생성)
   - [Array](#array)
   - [String](#string)
     - [주석(comment)](#주석comment)
@@ -22,6 +21,7 @@
     - [break과 continue](#break과-continue)
     - [switch statement](#switch-statement)
     - [Nested Loop](#nested-loop)
+  - [Method](#method)
 
 ## 기초적인 구조
 
@@ -175,8 +175,6 @@ System.out.println("Not logged in: " + (!isLoggedIn));
 ## 변수
 
 **변수는 데이터를 저장하기 위한 컨테이너**입니다. Java는 변수의 선언시부터 타입을 엄격히 따지는 **Strongly Typed** 언어로 JavaScript럼 문자열과 숫자를 더해도 알아서 타입 변환 해주지 않습니다.
-
-### 변수의 생성
 
 JavaScript의 `var`(추가된게 있기는 합니다...), `let`, `const`(Java는 `final` 자체로 변수를 생성하지 않습니다.)와 달리 Java의 경우 `<Type명> 변수명`의 형식으로 변수를 선언(declare)합니다. 변수를 생성했다면 **`=`를 통해 값을 할당** 가능합니다(`==`는 동일한지 확인하는 operator입니다.).
 
@@ -341,3 +339,12 @@ for (int i = 0; i < 6; i++) {
 ### Nested Loop
 
 Nested Loop는 **여러 루프문이 중첩**되어 있는 것입니다 (e.g`for` 문 안에서 `for`문이 돌아감).
+
+## Method
+
+Java의 **메서드(method)는 호출(call) 되었을때 실행되는 코드 블록**입니다. 비슷한 개념으로 함수(function)가 있는데:
+
+- **함수(function)**: 특정 작업을 처리하고 값(value)를 반환(return)할 수 있는 코드 블록. 일반적으로 독립적.
+- **메서드(method)**: OOP(Object-Oriented Programming) 언어에서 Class나 Object와 연관되어 있는 function. Object의 데이터를 조작하거나 Class의 필드나 다른 메서드에 접근 가능.
+
+이므로 function이 독립적으로 존재 불가하고 Class 안에 있는 Java에서는 거의 method라는 말만 들을 것입니다.
