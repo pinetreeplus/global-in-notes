@@ -9,7 +9,6 @@
   - [Java의 Class](#java의-class)
     - [Class의 구조](#class의-구조)
     - [constructor 기초](#constructor-기초)
-    - [Java의 Getter와 Setter](#java의-getter와-setter)
   - [Java OOP](#java-oop)
   - [Java의 Inheritance](#java의-inheritance)
   - [Java의 Interface](#java의-interface)
@@ -252,10 +251,6 @@ public class Main{
 
 - `regularUser.greet(superUser.getName())`: Getter인 `getName()`을 사용하여 구미호가 세랄에게 인사합니다.
 - `superUser.greet(regularUser.getName())`: 세랄이 구미호에게 인사합니다.
-
-### Java의 Getter와 Setter
-
-[OOP 개념의 Encapsulation](#encapsulation이란)에서 Java는 흔히 Encapsulation을 위해 Getter와 Setter를 사용한다 했습니다.
 
 ## Java OOP
 
