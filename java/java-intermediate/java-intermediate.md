@@ -25,7 +25,6 @@
   - [Design Pattern](#design-pattern)
     - [Design Pattern 종류](#design-pattern-종류)
     - [Java에서 흔히 쓰이는 패턴](#java에서-흔히-쓰이는-패턴)
-    - [Gang of Four](#gang-of-four)
 
 
 ## OOP 개념
@@ -145,19 +144,45 @@ Java는 Object에 집착하는 OOP(Object-Oriented Programming) 언어 입니다
 Java의 Class를 분석해 봅시다.
 
 ```java
+public class User {
+  // field인 name을 private으로 설정
+  private String name;
 
+  // name을 argument로 받아 Object를 만드는 constructor
+  public User(String name){
+    this.name = name;
+  }
+
+  public String greet(String opponentName){
+    // String.format()은 parameter 많이 받는 문자열 구성하는데 +나 concat()보다 보기 쉽습니다.
+    // 참고로 %s는 String 타입이며 2개가 "" 사이에 있고 각각 뒤에 따라오는 parameter 2개를 받습니다. 
+    // %d, %f, 는 각각 int형, float형
+    String salutation = String.format("안녕하세요 %s! 전 %s", opponentName, this.name);
+    // salutation 값을 return합니다.
+    return salutation;
+  }
+}
 ```
+한 구간씩 천천히 가봅시다:
 
-- `Class`:
-- Field
-- Constructor
-- Method
-- this
-- new
+`public class User`: User라는 **`class`를 declare**합니다. 
+- 참고:`public`으로 설정됨에 따라 타 Class에서 접근 가능합니다.
+
+`private String name;`: String 타입의 **field** `name`을 설정합니다. **Class 안의 변수를 attribute 혹은 field**라 부릅니다.
+- 참고: `private`으로 설정한 이유는 internal state를 `private`하게 유지하기 위해서입니다.
+  
+`public User(String name)`: 위 Class를 기반으로 **Instance(Object)를 생성하는 constructor입니다**. 
+- 참고:`public`의 경우 이 생성 인터페이스를 타 코드가 실행 가능하게 하기 위해서입니다.
+
+`this.name`: Class 내의 `this` 키워드는 argument로 받은 `name`이 아닌, User Class의 field인 `name`이라는 뜻입니다. **`this`가 붙는 경우 Class/Object 내부의 field/method**라 생각하시면 됩니다.
+
+`public String greet(String opponentName)`: User Class가 사용할 수 있는 method로 String을 하나 받아서 인사를 하는겁니다. 
+
+- 참고1: `opponentName`처럼 이어지는 각 단어의 앞을 대문자화 하는 것을 CamelCase라고 합니다. Java의 일반적인 스타일의 경우 Class/파일의 경우 첫 단어도 대문자, 변수나 method에 경우 첫 단어는 소문자 시작, 다음 단어부터 대문자입니다. 
 
 ### constructor로 Class 만들기
 
-
+- new
 
 ## Java OOP
 
@@ -215,7 +240,9 @@ Java의 Class를 분석해 봅시다.
 3. 효율성(Efficiency): 유명 디자인 패턴을 사용함으로써, 흔히 일어나는 문제에 해결책을 찾으려 머리 안 싸메고 더 빠르게 개발이 가능합니다.
 4. 유연함(Flexibility): 패턴은 abstract(추상적)인 해결책/템플릿으로 다양한 시나리오와 요구사항에 맞춰 implement(구현) 될 수 있습니다.
 
-[더 자세한 원본](https://www.geeksforgeeks.org/system-design/software-design-patterns/)
+[위 내용은 G4G의 article 중 하나를 요약한 것입니다](https://www.geeksforgeeks.org/system-design/software-design-patterns/)
+
+**Gang of Four**: 디자인 패턴의 창시자격인 유명 사람들의 유명한 패턴들입니다. [시간 나시면 보세요](https://www.geeksforgeeks.org/system-design/gang-of-four-gof-design-patterns/)
 
 ### Design Pattern 종류
 
@@ -230,7 +257,3 @@ Java의 Class를 분석해 봅시다.
 - Factory (Pattern):
 - Proxy (Pattern):
 - Builder (Pattern):
-
-### Gang of Four
-
-유명한 사람들이고 유명한 패턴들입니다. [시간 나시면 보세요](https://www.geeksforgeeks.org/system-design/gang-of-four-gof-design-patterns/)
