@@ -246,11 +246,11 @@ public class Main{
 
 **`new` 키워드는 새로운 Instance(Object)를 Instantiate(생성)할 때 사용합니다**(네, Array도 Object입니다).
 
-- `User regularUser = new User("구미호");`: Constructor 1을 사용하여 `구미호` Instance(Object)를 생성합니다. Constructor 1은 Instrance `isAdmin` 값이 `false`입니다.
-- `User superUser = new User("세랄", true);`: Constructor 2를 사용하여 `세랄`을 소환합니다. Constructor 2는 `isAdmin`의 argument 값(value)에 따라 관리자를 설정합니다.
+- `User gumiho = new User("구미호");`: Constructor 1을 사용하여 `구미호` Instance(Object)를 생성합니다. Constructor 1은 Instrance `isAdmin` 값이 `false`입니다.
+- `User serral = new User("세랄", true);`: Constructor 2를 사용하여 `세랄`을 소환합니다. Constructor 2는 `isAdmin`의 argument 값(value)에 따라 관리자를 설정합니다.
 
-- `regularUser.greet(superUser.getName())`: Getter인 `getName()`을 사용하여 구미호가 세랄에게 인사합니다.
-- `superUser.greet(regularUser.getName())`: 세랄이 구미호에게 인사합니다.
+- `gumiho.greet(serral.getName())`: Getter인 `getName()`을 사용하여 구미호가 세랄에게 인사합니다.
+- `serral.greet(gumiho.getName())`: 세랄이 구미호에게 인사합니다.
 
 ## Java OOP
 
