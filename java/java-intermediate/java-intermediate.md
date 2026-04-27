@@ -8,9 +8,11 @@
     - [Encapsulation이란](#encapsulation이란)
   - [Java의 Class](#java의-class)
     - [Class의 구조](#class의-구조)
-    - [constructor로 Class 만들기](#constructor로-class-만들기)
+    - [constructor 기초](#constructor-기초)
+    - [Java의 Getter와 Setter](#java의-getter와-setter)
   - [Java OOP](#java-oop)
-  - [Interface](#interface)
+  - [Java의 Inheritance](#java의-inheritance)
+  - [Java의 Interface](#java의-interface)
     - [Java Bean](#java-bean)
   - [Access Modifier](#access-modifier)
     - [public](#public)
@@ -145,8 +147,9 @@ Java의 Class를 분석해 봅시다.
 
 ```java
 public class User {
-  // field인 name을 private으로 설정
+  // field인 name과 isAdmin을 private으로 설정
   private String name;
+  private boolean isAdmin;
 
   // name을 argument로 받아 Object를 만드는 constructor
   public User(String name){
@@ -168,34 +171,109 @@ public class User {
 `public class User`: User라는 **`class`를 declare**합니다. 
 - 참고:`public`으로 설정됨에 따라 타 Class에서 접근 가능합니다.
 
-`private String name;`: String 타입의 **field** `name`을 설정합니다. **Class 안의 변수를 attribute 혹은 field**라 부릅니다.
+`private String name;`, `private boolean isAdmin`: 각각 `String`, `boolean` 타입의 **field** `name`과 `isAdmin`을 설정합니다. **Class 안의 변수를 attribute 혹은 field**라 부릅니다.
 - 참고: `private`으로 설정한 이유는 internal state를 `private`하게 유지하기 위해서입니다.
   
 `public User(String name)`: 위 Class를 기반으로 **Instance(Object)를 생성하는 constructor입니다**. 
 - 참고:`public`의 경우 이 생성 인터페이스를 타 코드가 실행 가능하게 하기 위해서입니다.
 
-`this.name`: Class 내의 `this` 키워드는 argument로 받은 `name`이 아닌, User Class의 field인 `name`이라는 뜻입니다. **`this`가 붙는 경우 Class/Object 내부의 field/method**라 생각하시면 됩니다.
+`this.name`: Class 내의 `this` 키워드는 argument로 받은 `name`이 아닌, `User` Class의 field인 `name`이라는 뜻입니다. **`this`가 붙는 경우 Class/Object 내부의 field/method**라 생각하시면 됩니다.
 
-`public String greet(String opponentName)`: User Class가 사용할 수 있는 method로 String을 하나 받아서 인사를 하는겁니다. 
+`public String greet(String opponentName)`: `User` Class가 사용할 수 있는 method로 String을 하나 받아서 인사를 하는겁니다. 
 
-- 참고1: `opponentName`처럼 이어지는 각 단어의 앞을 대문자화 하는 것을 CamelCase라고 합니다. Java의 일반적인 스타일의 경우 Class/파일의 경우 첫 단어도 대문자, 변수나 method에 경우 첫 단어는 소문자 시작, 다음 단어부터 대문자입니다. 
+- 참고: `opponentName`처럼 이어지는 각 단어의 앞을 대문자화 하는 것을 CamelCase라고 합니다. Java의 일반적인 스타일의 경우 Class/파일의 경우 첫 단어도 대문자, 변수나 method에 경우 첫 단어는 소문자 시작, 다음 단어부터 대문자입니다. 
 
-### constructor로 Class 만들기
+**Class/Object 내의 field나 method에 접근하기 위해선 `<Class/Object-이름>.<field-이름>`, `<Class/Object-이름>.<method-이름>()` 처럼 dot(`.`)을 붙입니다.**
 
-- new
+### constructor 기초
+
+위에서 만든 `User` Class 내부에 똑같이 `User()`라는 특수한 function(method는 아닙니다)이 보일 것입니다. 이렇게 이름이 Class명과 같은 내부 function을 **constructor라고 하며 Instance(Object)를 생성하는 역할을 합니다.**. 아래 예제에서 `User`, `Main` Class는 동일한 package 내(아니라면 `import` 필요)의 별도의 `User.java`, `Main.java`에 저장되어 있다고 합시다.
+
+```java
+// User Class입니다.
+public class User {
+  private String name;
+  private boolean isAdmin;
+  public String greet(String opponentName){
+    String salutation = String.format("안녕하세요 %s! 전 %s", opponentName, this.name);
+    return salutation;
+  }
+  
+  // name만 받는 constructor
+  public User(String name){
+    this.name = name;
+    this.isAdmin = false;
+  }
+
+  // name과 isAdmin을 받는 constructor
+  public User(String name, boolean isAdmin){
+    this.name = name;
+    this.isAdmin = isAdmin;
+  }
+
+  // name 필드의 Getter
+  public String getName() {
+      return name;
+  }
+  
+  // name 필드의 Setter
+  public void setName(String name) {
+      this.name = name;
+  }
+
+}
+```
+```java
+public class Main{
+  public static void main(String[] args){
+    User gumiho = new User("구미호");
+    User serral = new User("세랄", true);
+
+    System.out.println(gumiho.greet(serral.getName())); // 안녕하세요 세랄! 전 구미호
+    System.out.println(serral.greet(gumiho.getName())); // 안녕하세요 구미호! 전 세랄
+    
+  }
+}
+```
+
+역시 한 블록씩 넘어가 봅시다. 편의상 `name`만 받는 constructor를 1번 constructor, `name`과 `isAdmin`을 받는 constructor를 2번이라 하겠습니다.
+
+- `public User(String name)`: argument로 이름만을 설정하고 있는 constructor입니다. `isAdmin`은 기본적으로 `false`로 설정합니다.
+- `public User(String name, boolean isAdmin)`: argument로 이름과 관리자 모두를 받는 constructor입니다. `isAdmin`을 받는 boolean 값에 따라 다르게 설정합니다.
+
+예시처럼 **한 Class내에서 받는 argument의 종류와 수에 따라 다른 constructor를 declare(선언)이 가능**합니다. 이는 overloading(constructor, method 등 어떤 기능이 여러 종류의 input을 받을 수 있음)의 예시입니다.
+
+- `public String getName()`, `public void setName(String name)`: [Encapsulation](#encapsulation이란)에서 설명한 Java의 Getter Setter입니다.
+
+**`new` 키워드는 새로운 Instance(Object)를 Instantiate(생성)할 때 사용합니다**(네, Array도 Object입니다).
+
+- `User regularUser = new User("구미호");`: Constructor 1을 사용하여 `구미호` Instance(Object)를 생성합니다. Constructor 1은 Instrance `isAdmin` 값이 `false`입니다.
+- `User superUser = new User("세랄", true);`: Constructor 2를 사용하여 `세랄`을 소환합니다. Constructor 2는 `isAdmin`의 argument 값(value)에 따라 관리자를 설정합니다.
+
+- `regularUser.greet(superUser.getName())`: Getter인 `getName()`을 사용하여 구미호가 세랄에게 인사합니다.
+- `superUser.greet(regularUser.getName())`: 세랄이 구미호에게 인사합니다.
+
+### Java의 Getter와 Setter
+
+[OOP 개념의 Encapsulation](#encapsulation이란)에서 Java는 흔히 Encapsulation을 위해 Getter와 Setter를 사용한다 했습니다.
 
 ## Java OOP
 
-이 섹션은 OOP의 개념이 아닌 Java에서의 사용법입니다.
+이 섹션은 OOP의 개념이 아닌 Java에서의 구현 및 사용법입니다.
+
+## Java의 Inheritance
 
 **Multiple Inheritance**는 말그대로 여러번 inherit 받는다는겁니다.
 
-## Interface
-
+## Java의 Interface
 
 ### Java Bean
 
 ## Access Modifier
+
+Access Modifier란 Java의 Class, method, variable 등의 접근 권한을 설정하는 키워드입니다. Encapsulation과 깊은 관계가 있습니다.
+
+<figure><figcaption>본 이미지는 </figcaption></figure>
 
 ### public
 
