@@ -166,7 +166,7 @@ System.out.println("로그인 안 됨: " + (!isLoggedIn));
 - `boolean`: `true`나 `false`를 값으로 가집니다. `if`, `for`,`while`문 등은 조건(condition)부가 `true`여야 합니다. 
   - e,g. `if(a>10)`은 `a=9`일 경우 `if(false)`로 실행 안 함.
 
-참고: `unsigned`의 경우 양수(0포함), `signed`의 경우 음수까지 포함입니다. `signed`의 경우 메모리 비트 하나가 양수/음수 표현에 사용되어 한쪽 방향 범위가 절반입니다. e.g, 8바이트의 경우 `signed`는 `-128` ~ `127`, `unsigned`의 경우 `0` ~ `255`.
+참고: `unsigned`의 경우 양수(0포함), `signed`의 경우 음수까지 포함입니다. `signed`의 경우 메모리 비트 하나가 양수/음수 표현에 사용되어 한쪽 방향 범위가 절반입니다. e.g, 8비트의 경우 `signed`는 `-128` ~ `127`, `unsigned`의 경우 `0` ~ `255`.
 
 ### Non-Primitive Type
 
