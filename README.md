@@ -32,7 +32,7 @@ Linux의 경우 VSCodium/VSCode에서 `Ctrl+Shift+V` 누르시면 preview 뜹니
 
 주요 참고 문서는:
 
-- [The Java Handbook](https://www.freecodecamp.org/news/the-java-handbook/)
+- [Dev.java Learn](https://dev.java/learn/classes-objects/)
 
 토픽별로는
 - `frontend/`: 모두 MDN 리소스입니다.
