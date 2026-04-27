@@ -30,6 +30,10 @@ Linux의 경우 VSCodium/VSCode에서 `Ctrl+Shift+V` 누르시면 preview 뜹니
 
 - [MDN](https://github.com/mdn/content?tab=License-1-ov-file): CC-BY-SA 2.5 라이선스
 
+주요 참고 문서는:
+
+- [The Java Handbook](https://www.freecodecamp.org/news/the-java-handbook/)
+
 토픽별로는
 - `frontend/`: 모두 MDN 리소스입니다.
 - `java/`: 사용된 외부 리소스가 아직 없습니다. 
