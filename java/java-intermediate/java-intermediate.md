@@ -357,16 +357,17 @@ public class Barbarian extends Warrior{
 
   // あいさつ를 합니다.
   public String aisatsu(){
-      return String.format("나는 %s 마을의 %s이다!",this.village, this.name);
+      // 
+      return String.format("나는 %s 마을의 %s이다!",this.village, this.getName());
   }
 }
 ```
 
-`super` 키워드는 해당 class의 parent(부모) class를 부르는 말입니다.
+`super` 키워드는 해당 class의 parent(부모) class를 부르는 말입니다. `super(name,rank)`는 parent class의 constructor 중 해당 형태를 부르는 것이며 `super.name`의 경우 `Warrior`의 `name`이 `private`이므로 access가 안 되므로 access method인 `getName()`의 형식으로 field와 method 등도 access 사용합니다.
 
-**Multiple Inheritance**는 말그대로 여러번 inherit 받는다는겁니다. 
+**Multiple Inheritance**는 여러 parent로부터 inherit 받는겁니다. Java는 한 class는 하나의 class만 `extends` 가능합니다. 
 
-Java는 한 class는 하나의 class만 `extends` 가능합니다. `Record`는 이미 `java.lang.Record`을 `extends`한 상태로 추가로 `extends` 불가합니다. Interface의 경우 여러 interface를 `extends`할 수 있지만 class는 `extends`할 수 없습니다.
+참고: `Record`는 이미 `java.lang.Record`을 `extends`한 상태로 추가로 `extends` 불가합니다. Interface의 경우 여러 interface를 `extends`할 수 있지만 class는 `extends`할 수 없습니다.
 
 ### Java의 Interface
 
