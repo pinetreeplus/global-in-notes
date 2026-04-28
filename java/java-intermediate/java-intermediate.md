@@ -19,6 +19,7 @@
   - [기타 Modifier](#기타-modifier)
     - [static](#static)
     - [final](#final)
+    - [abstract](#abstract)
     - [sealed](#sealed)
   - [Java package 관리](#java-package-관리)
     - [package란?](#package란)
@@ -332,14 +333,15 @@ public class Warrior{
 
 `super` 키워드는 해당 class의 parent(부모) class를 부르는 말입니다.
 
-**Multiple Inheritance**는 말그대로 여러번 inherit 받는다는겁니다. Java는 한 class나 interface등이 하나의 class만 `extends` 가능합니다. `Record`는 이미 `java.lang.Record`을 `extends`한 상태로 추가로 `extends` 불가합니다.
+**Multiple Inheritance**는 말그대로 여러번 inherit 받는다는겁니다. 
+
+Java는 한 class는 하나의 class만 `extends` 가능합니다. `Record`는 이미 `java.lang.Record`을 `extends`한 상태로 추가로 `extends` 불가합니다. Interface의 경우 여러 interface를 `extends`할 수 있지만 class는 `extends`할 수 없습니다.
 
 ### Java의 Interface
 
-그 자체로 Object로 사용될 일은 없지만 다른 **class를 위한 템플릿이 필요하다면 interface를 사용**합니다.
+그 자체로 Object로 사용될 일은 없지만 다른 **class를 위한 템플릿이 필요하다면 [interface](https://dev.java/learn/interfaces/defining-interfaces/)를 사용**합니다.
 
 - `implements`: Class가 구현할 템플릿을 interface에서 받아 오는 것입니다. Interface는 다른 interface를 `implements` 할 수 없습니다(`extends`는 가능). 
-- `default` method란 
 
 ```java
 public interface Game{
@@ -347,7 +349,18 @@ public interface Game{
 }
 ```
 
+`abstract` 키워드는 
+abstract method는 
+
 ### Abstract Class
+
+[Abstract class](https://dev.java/learn/inheritance/abstract-classes/)는 interface와 비슷하게 instantiate되지 못하지만 타 class에 `extends` 될 수 있는 class입니다.
+
+```java
+abstract class Game{
+  //TODO
+}
+```
 
 ### Java Bean
 
@@ -375,14 +388,13 @@ Access Modifier 키워드를 따로 설정하지 않으면 해당 Class, method,
 
 ### static
 
-method가 특정 object가 아니라 ㅊlass 직속이라는 겁니다. 새 Object(Instance, 실체)를 만들 필요 없이 Class(템플릿)에서 바로 call(호출) 가능
+method가 특정 object가 아니라 class 직속이라는 겁니다. 새 Object(Instance, 실체)를 만들 필요 없이 Class(템플릿)에서 바로 call(호출) 가능
 
 ### final
 
+### abstract
 
 ### sealed
-
-
 
 ## Java package 관리
 
