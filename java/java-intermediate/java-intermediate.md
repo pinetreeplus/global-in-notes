@@ -301,7 +301,7 @@ Game rimWorld = new Game("림월드", "콜로니 시뮬레이션");
 System.out.println(String.format("%s는 %s 게임입니다.", rimworld.gameName(), rimworld.genre()))
 ```
 
-Record는 [Compact Constructor](https://dev.java/learn/records/#compact)를 이용해 `()`와 overloading이 필요 없이 조건에 따라 다른 constructor를 만들 수 있습니다.
+Record는 [Compact Constructor](https://dev.java/learn/records/#compact)를 이용해 조건에 따라 Canonical constructor를 커스텀 할 수 있습니다.
 
 후에 나올 내용이지만 `Record`는 이미 `java.lang.Record`를 `extends`(상속) 받기 때문에 다른 class 등을 `extends` 할 수 없습니다. Interface를 `implements`하는 것은 가능.
 
