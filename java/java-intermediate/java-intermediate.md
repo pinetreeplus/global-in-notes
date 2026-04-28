@@ -9,12 +9,16 @@
   - [Java의 Class](#java의-class)
     - [Class의 구조](#class의-구조)
     - [constructor 기초](#constructor-기초)
+    - [Record](#record)
   - [Java의 Inheritance](#java의-inheritance)
     - [Java의 Interface](#java의-interface)
     - [Abstract Class](#abstract-class)
     - [Java Bean](#java-bean)
   - [Access Modifier](#access-modifier)
     - [Access Modifer의 설명](#access-modifer의-설명)
+  - [기타 Modifier](#기타-modifier)
+    - [static](#static)
+    - [final](#final)
     - [sealed](#sealed)
   - [Java package 관리](#java-package-관리)
     - [package란?](#package란)
@@ -252,11 +256,52 @@ public class Main{
 - `gumiho.greet(serral.getName())`: Getter인 `getName()`을 사용하여 구미호가 세랄에게 인사합니다.
 - `serral.greet(gumiho.getName())`: 세랄이 구미호에게 인사합니다.
 
+### Record
+
+[dev.Java의 Record 문서](https://dev.java/learn/records/)
+
+Record는 **Immutable(변하지 않는) 데이터를 저장**하기 위한 특수한 class라 생각 할 수 있습니다. `class` modifier 대신 `record`를 사용합니다. 
+
+class 내에 `final` modifier를 사용하여 field를 생성할 수도 있지만 그 작업을 더 쉽게 해줍니다. 
+
+먼저 일반 class로 `final` 키워드를 사용하여 변하지 않는 데이터를 저장해 봅시다:
+
+```java
+public class Game{
+  // final은 JS의 const와 비슷하게 값을 고정시키는 modifier입니다. 
+  // JS의 const와 같이 Object를 reference(참조)하는 경우 그 내부 field는 변경될 수 있습니다.
+  private final String gameName;
+  private final String genre;
+
+  public Game(String gameName, String genre){
+    this.gameName = gameName;
+    this.genre = genre;
+  }
+}
+```
+
+해당 클래스는 `new`로 `Game` 오브젝트를 생성 후 게임 이름과 장르 수정이 불가능합니다.
+
+위 class는 다음과 같은 한 줄짜리 `record`와 같습니다.
+
+```java
+public record Game(String gameName, String genre) {}
+```
+
+물론 `{}` 내 필요한 내용을 더 추가(추가 constructor등, 기본은 field 전부를 argument로 받는 constructor)할 수도 있지만 한결 간편해집니다.
+
+여기에 더해 IDE에 따라 `toString()`, `equals()`, `hashCode()` 등의 field에 많이 쓰이는 method를 추가하기도 합니다. 
+
+- 참고1: IDE(Integrated Development Environment)는 VSCodium, IntelliJ, Eclipse와 같이 개발에 필요한 기능(텍스트 편집, IntelliSense, 디버깅, 빌드 등)을 통합한 소프트웨어입니다.
+- 참고2: compiler는 인간이 쓰는 코드를 byte 코드로 변경하는 소프트웨어. Java 컴파일러의 경우 JVM이 실행가능하도록 `.java`를 `.class` 바이트 코드로 변환
+
+
+
 ## Java의 Inheritance
 
 Java에서는 class가 다른 class에서 derive(파생)될 수 있으며 이 경우 **그 class의 field와 method를 inherit(상속)** 받습니다.
 
-- Inherit을 해준 **원본 class는**: parent class, superclass,
+- Inherit을 해준 **원본 class는**: parent class, superclass, base class
 - Inherit을 받아 **derive된 class는**: child class, subclass, derived class 등으로 부릅니다.
 
 class A가 class B를 inherit하려면 `class A extends B` 식으로 `extends`를 사용하여 class를 declare하면 됩니다. 예시로:
@@ -274,15 +319,14 @@ public class Warrior{
 
 ```
 
+`super` 키워드는 해당 class의 parent(부모) class를 부르는 말입니다.
 
 **Multiple Inheritance**는 말그대로 여러번 inherit 받는다는겁니다.
 
-- extends
-- super
-
 ### Java의 Interface
 
-- implements
+- `implements`:
+- `default` method란
 
 ### Abstract Class
 
@@ -291,6 +335,8 @@ public class Warrior{
 ## Access Modifier
 
 Access Modifier란 Java의 Class, method, variable, constructor 등의 **접근 권한**을 설정하는 keyword입니다. Encapsulation과 깊은 관계가 있습니다.
+
+**Access Modifier**는 프로그래밍시 접근 권한을 설정하는 개발 용도로 **보안 기능으로 사용되는 것이 아닙니다.**
 
 ### Access Modifer의 설명
 
@@ -302,11 +348,22 @@ Access Modifier 키워드를 따로 설정하지 않으면 해당 Class, method,
 
 `private` 키워드로 declare(선언)된 method, property, constructor는 **같은 class에서만 접근 가능**합니다. 모든 Access 키워드 중 가장 제한적(restrictive)입니다.
 
-`protected`로 declare(선언)된 method, property, constructor는 **1. 같은 패키지에서나(package-private와 같은 범위)**나 **2.해당 Class의 child Class(다른 package에 있어도 가능)에서** 접근 가능합니다.
+`protected`로 declare(선언)된 method, property, constructor는 **1. 같은 패키지에서나(package-private와 같은 범위)**나 **2.해당 Class의 child Class에서** 접근 가능합니다.
+
+## 기타 Modifier
+
+위에서 배운 Modifier 외 Non-Access Modifier도 여러 종류가 있습니다.
+
+### static
+
+method가 특정 object가 아니라 ㅊlass 직속이라는 겁니다. 새 Object(Instance, 실체)를 만들 필요 없이 Class(템플릿)에서 바로 call(호출) 가능
+
+### final
+
 
 ### sealed
 
-`sealed`
+
 
 ## Java package 관리
 
@@ -314,9 +371,6 @@ Access Modifier 키워드를 따로 설정하지 않으면 해당 Class, method,
 
 `import`
 
-- Record
-- final
-- default method
 
 ### sealed
 

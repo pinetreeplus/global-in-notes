@@ -28,7 +28,7 @@ Linux의 경우 VSCodium/VSCode에서 `Ctrl+Shift+V` 누르시면 preview 뜹니
 
 주요 출처로는:
 
-- [MDN](https://github.com/mdn/content?tab=License-1-ov-file): CC-BY-SA 2.5 라이선스
+- [MDN](https://github.com/mdn/content/blob/main/LICENSE.md): CC-BY-SA 2.5 라이선스
 
 주요 참고 문서는:
 
