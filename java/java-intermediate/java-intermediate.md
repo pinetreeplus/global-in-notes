@@ -36,7 +36,7 @@
 
 이 섹션의 경우 필요한 개념만 간단히 짚고 넘어가겠습니다. [자세한 내용은 여기서](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object-oriented_programming)
 
-OOP는 Object-Oriened Programming의 약자로 시스템을 Object의 집합으로써 모델링 하는것을 뜻 합니다. 이 때 각 Object는 시스템의 일정 부분을 나타냅니다.
+OOP는 Object-Oriented Programming의 약자로 시스템을 Object의 집합으로써 모델링 하는것을 뜻 합니다. 이 때 각 Object는 시스템의 일정 부분을 나타냅니다.
 
 Object는 다른 코드에서 사용될 수 있도록 인터페이스를 제공하는 것이며, 해당 Object를 쓰는 시스템의 다른 부분은 그 Object 내부가 어떻게 돌아가는지 알 필요가 없습니다.
 
@@ -332,12 +332,20 @@ public class Warrior{
 
 `super` 키워드는 해당 class의 parent(부모) class를 부르는 말입니다.
 
-**Multiple Inheritance**는 말그대로 여러번 inherit 받는다는겁니다.
+**Multiple Inheritance**는 말그대로 여러번 inherit 받는다는겁니다. Java는 한 class나 interface등이 하나의 class만 `extends` 가능합니다. `Record`는 이미 `java.lang.Record`을 `extends`한 상태로 추가로 `extends` 불가합니다.
 
 ### Java의 Interface
 
-- `implements`:
-- `default` method란
+그 자체로 Object로 사용될 일은 없지만 다른 **class를 위한 템플릿이 필요하다면 interface를 사용**합니다.
+
+- `implements`: Class가 구현할 템플릿을 interface에서 받아 오는 것입니다. Interface는 다른 interface를 `implements` 할 수 없습니다(`extends`는 가능). 
+- `default` method란 
+
+```java
+public interface Game{
+  // TODO
+}
+```
 
 ### Abstract Class
 
