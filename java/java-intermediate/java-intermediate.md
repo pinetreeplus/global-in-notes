@@ -282,20 +282,31 @@ public class Game{
 
 해당 클래스는 `new`로 `Game` 오브젝트를 생성 후 게임 이름과 장르 수정이 불가능합니다.
 
-위 class는 다음과 같은 한 줄짜리 `record`와 같습니다.
+위 class는 다음과 같은 한 줄짜리 `record`와 유사하게 동작합니다.
 
 ```java
 public record Game(String gameName, String genre) {}
 ```
 
-물론 `{}` 내 필요한 내용을 더 추가(추가 constructor등, 기본은 field 전부를 argument로 받는 constructor)할 수도 있지만 한결 간편해집니다.
+`record`로 생성을 할 시:
+ 
+- Record의 필드 수와 종류와 일치하는 constructor(Canonical Constructor)를 자동으로 생성해줍니다. 
+  - 위의 경우 `Game(String gameName, String genre)`
+- Compiler가 `toString()`, `equals()`, `hashCode()` 등의 field에 많이 쓰이는 method 역시 추가해줍니다. (IDE에서 class에 템플릿으로 해주는 것과 비슷)
+- Accessor Method(Getter의 공식 표현)역시 `<field-이름>()`의 형태로 자동으로 생성해 줍니다.  따라서 다음처럼 Record의 필드에 Access(접근) 가능합니다.
 
-여기에 더해 IDE에 따라 `toString()`, `equals()`, `hashCode()` 등의 field에 많이 쓰이는 method를 추가하기도 합니다. 
+```java
+Game rimWorld = new Game("림월드", "콜로니 시뮬레이션");
+// field명과 동일한 이름의 자동 생성된 Getter, gameName()과 genre()
+System.out.println(String.format("%s는 %s 게임입니다.", rimworld.gameName(), rimworld.genre()))
+```
+
+Record는 [Compact Constructor](https://dev.java/learn/records/#compact)를 이용해 `()`와 overloading이 필요 없이 조건에 따라 다른 constructor를 만들 수 있습니다.
+
+후에 나올 내용이지만 `Record`는 이미 `java.lang.Record`를 `extends`(상속) 받기 때문에 다른 class 등을 `extends` 할 수 없습니다. Interface를 `implements`하는 것은 가능.
 
 - 참고1: IDE(Integrated Development Environment)는 VSCodium, IntelliJ, Eclipse와 같이 개발에 필요한 기능(텍스트 편집, IntelliSense, 디버깅, 빌드 등)을 통합한 소프트웨어입니다.
 - 참고2: compiler는 인간이 쓰는 코드를 byte 코드로 변경하는 소프트웨어. Java 컴파일러의 경우 JVM이 실행가능하도록 `.java`를 `.class` 바이트 코드로 변환
-
-
 
 ## Java의 Inheritance
 
