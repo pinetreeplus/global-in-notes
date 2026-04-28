@@ -296,7 +296,7 @@ You can also use **square bracket notation** like `Array`s to get a character at
 
 - `includes()`: Checks if the string contains given substring. Returns `true` or `false`.
 - `startsWith()`, `endsWith()`: Check if the string starts/ends with certain substring.
-- `indexOf()`: Returns index of the first occurence of the substring. `-1` if not present. You can [search for subsequent occurences](./03-javascript/string-operations.js) by giving greater index than the first occurent for the second parameter.
+- `indexOf()`: Returns index of the first occurence of the substring. `-1` if not present. You can [search for subsequent occurences](./javascript/string-operations.js) by giving greater index than the first occurent for the second parameter.
 - `slice()`: 
 
 ## operators

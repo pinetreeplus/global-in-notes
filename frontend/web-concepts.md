@@ -45,7 +45,7 @@
 
 **Domain 네임** 은 인터넷 웹사이트에 부여된 사람이 읽기 쉬운 이름입니다. 도메인 이름은 여러 부분으로 구성되어 있습니다. TLD->Component는 오른쪽에서 왼쪽 순서입니다.
 
-<img src="./03-web-concepts/domain-name.png" width="500">
+<img src="./images/domain-name.png" width="500">
 
 - **TLD (Top-Level Domain)**: 유저에게 웹사이트의 목적을 알립니다. 일반적인 TLD의 경우(`.com`,`.org`,`.net`) 별다른 기준이 없지만 일부의 경우 더 엄격합니다. For e.g,
   1. Local TLD:  `.us`, `.fr`, `.se` 등의 국가 코드

@@ -28,7 +28,8 @@ Linux의 경우 VSCodium/VSCode에서 `Ctrl+Shift+V` 누르시면 preview 뜹니
 
 주요 출처로는:
 
-- [MDN](https://github.com/mdn/content/blob/main/LICENSE.md): CC-BY-SA 2.5 라이선스
+- MDN: Prose의 경우 [CC-BY-SA 2.5 라이선스](https://creativecommons.org/licenses/by-sa/2.5/), 코드의 경우 [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
+- [donnemartin/system-design-primer GitHub](https://github.com/donnemartin/system-design-primer/blob/master/LICENSE.txt): CC BY 4.0 라이선스
 
 주요 참고 문서는:
 
@@ -37,5 +38,8 @@ Linux의 경우 VSCodium/VSCode에서 `Ctrl+Shift+V` 누르시면 preview 뜹니
 토픽별로는
 - `frontend/`: 모두 MDN 리소스입니다.
 - `java/`: 사용된 외부 리소스가 아직 없습니다. 
+- `system-design`: donnemartin/system-design-primer 리소스입니다.
 
 `original-note`의 경우 개인적으로 참조하려 한 블로그 글 등이 저장되어 있어 삭제했습니다.
+
+이미지의 경우 별도로 [CREDITS.md](./CREDITS.md)를 만들었습니다..
