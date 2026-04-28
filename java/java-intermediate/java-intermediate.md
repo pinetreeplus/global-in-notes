@@ -13,17 +13,16 @@
   - [Java의 Inheritance](#java의-inheritance)
     - [Java의 Interface](#java의-interface)
     - [Abstract Class](#abstract-class)
-    - [Java Bean](#java-bean)
+    - [JavaBeans](#javabeans)
   - [Access Modifier](#access-modifier)
     - [Access Modifer의 설명](#access-modifer의-설명)
-  - [기타 Modifier](#기타-modifier)
+  - [Non Access Modifier](#non-access-modifier)
     - [static](#static)
     - [final](#final)
     - [abstract](#abstract)
     - [sealed](#sealed)
   - [Java package 관리](#java-package-관리)
     - [package란?](#package란)
-    - [sealed](#sealed-1)
   - [Pattern Matching](#pattern-matching)
   - [Design Pattern](#design-pattern)
     - [Design Pattern 종류](#design-pattern-종류)
@@ -362,7 +361,14 @@ abstract class Game{
 }
 ```
 
-### Java Bean
+### JavaBeans
+
+[JavaBeans](https://en.wikipedia.org/wiki/JavaBeans)는 다음과 같은 규칙을 따르는 Java class를 일컫습니다(`import`하는 특정 라이브러리 등이 아님):
+
+- `public`한 default constructor(argument가 없는 constructor)가 있어야 합니다.
+- Class의 property가 `get`, `set`, `is`,`to`와 `access methods`(Getter), `mutator methods`(Setter)를 표준화된 naming convention(이름 짓는 관습)에 따라 access 가능해야 합니다.
+- Class가 serializable해야 합니다. (`java.io.Serializable` 등 사용)
+
 
 ## Access Modifier
 
@@ -382,7 +388,7 @@ Access Modifier 키워드를 따로 설정하지 않으면 해당 Class, method,
 
 `protected`로 declare(선언)된 method, property, constructor는 **1. 같은 패키지에서나(package-private와 같은 범위)**나 **2.해당 Class의 child Class에서** 접근 가능합니다.
 
-## 기타 Modifier
+## Non Access Modifier
 
 위에서 배운 Modifier 외 Non-Access Modifier도 여러 종류가 있습니다.
 
@@ -392,19 +398,38 @@ method가 특정 object가 아니라 class 직속이라는 겁니다. 새 Object
 
 ### final
 
+변화를 제한하기 위한 keyword입니다. 새 value를 assign할 수 없지만, Object등에 붙은 경우 Object 내부의 value는 변경 될 수 있습니다.
+
 ### abstract
 
+추상화를 위해 사용됩니다. Class와 method에 적용 가능합니다.
+
+`abstract` class의 경우
+
+- Instance를 생성 불가
+- `abstract`와 일반 method 모두 가질 수 있음
+- constructor를 가질 수 있음(inherit용, 직접 instantiate 불가)
+- field를 가질 수 있음
+- Interface를 `implements` 가능
+
+`abstract` method의 경우
+
+- Body(코드 구동부)가 없음
+- `abstract` method는 `abstract` class만이 declare(선언) 가능
+
 ### sealed
+
+Inheritance(상속)을 정교하게 관리하기 위해 사용합니다. 
 
 ## Java package 관리
 
 ### package란?
 
-`import`
+[Java에서 package](https://en.wikipedia.org/wiki/Java_package)는 class들을 namespace로 묶어서 관리합니다. `default`(access modifer 없을 시 기본)과 `protected` class의 경우 같은 패키지 내에서 access 가능합니다.
 
+`package` 키워드로 
 
-### sealed
-
+`import` 키워드로 같은 package 내의 class를 가져올시 namespace 없이 해당 class를 access 가능합니다;
 
 ## Pattern Matching
 
