@@ -41,7 +41,7 @@
             <td>Public Domain</td>                                    
         </tr>
         <tr>
-            <td rowspan=5>cs-basics/images</td>
+            <td rowspan=6>cs-basics/images</td>
             <td>Data_Queue.svg.png</td>
             <td><a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)#/media/File:Data_Queue.svg">wikipedia</a></td>
             <td>CC BY-SA 3.0</td>                                    
@@ -65,7 +65,12 @@
             <td>Max-Heap-new.svg.png</td>
             <td><a href="https://en.wikipedia.org/wiki/Heap_(data_structure)#/media/File:Max-Heap-new.svg">wikipedia</a></td>
             <td>CC BY-SA 4.0</td>                                    
-        </tr>                    
+        </tr>
+        <tr>
+            <td>AVLtreef.svg.png</td>
+            <td><a href="https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree#/media/File:AVLtreef.svg">wikipedia</a></td>
+            <td>Public Domain</td>                                    
+        </tr>                                                
     </tbody>    
 </table>
 
