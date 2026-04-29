@@ -41,7 +41,7 @@
             <td>Public Domain</td>                                    
         </tr>
         <tr>
-            <td rowspan=8>cs-basics/images</td>
+            <td rowspan=12>cs-basics/images</td>
             <td>Data_Queue.svg.png</td>
             <td><a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)#/media/File:Data_Queue.svg">wikipedia</a></td>
             <td>CC BY-SA 3.0</td>                                    
@@ -74,14 +74,32 @@
         <tr>
             <td>B-tree.svg.png</td>
             <td><a href="https://en.wikipedia.org/wiki/B-tree#/media/File:B-tree.svg">wikipedia</a></td>
-            <td>CC BY-SA 3.0<td>                                    
-        <tr>      
+            <td>CC BY-SA 3.0</td>                                    
+        </tr>      
         <tr>
             <td>AVL-tree-wBalance_K.svg.png</td>
             <td><a href="https://en.wikipedia.org/wiki/AVL_tree#/media/File:AVL-tree-wBalance_K.svg">wikipedia</a></td>
-            <td>CC BY-SA 4.0<td>                                    
-        <tr>                                                         
+            <td>CC BY-SA 4.0</td>                                    
+        </tr>  
+        <tr>
+            <td>Directed.svg.png</td>
+            <td><a href="https://en.wikipedia.org/wiki/Graph_(abstract_data_type)#/media/File:Directed.svg">wikipedia</a></td>
+            <td>Public Domain</td>                                    
+        </tr>  
+        <tr>
+            <td>Singly-linked-list.svg.png</td>
+            <td><a href="https://en.wikipedia.org/wiki/Linked_list#/media/File:Singly-linked-list.svg">wikipedia</a></td>
+            <td>Public Domain<t/d>                                    
+        </tr>                                                                         
+        <tr>
+            <td>1D_array_diagram.svg.png</td>
+            <td><a href="https://en.wikipedia.org/wiki/Array_(data_structure)#/media/File:1D_array_diagram.svg">wikipedia</a></td>
+            <td>CC BY 4.0</td>                                    
+        </tr>  
+        <tr>
+            <td>2D_array_diagram.svg.png</td>
+            <td><a href="https://en.wikipedia.org/wiki/Array_(data_structure)#/media/File:2D_array_diagram.svg">wikipedia</a></td>
+            <td>CC BY 4.0</td>                                    
+        </tr>                    
     </tbody>    
 </table>
-
-B-tree.svg.png
