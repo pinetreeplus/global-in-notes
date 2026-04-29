@@ -4,12 +4,14 @@
   - [Complexity (복잡도)](#complexity-복잡도)
     - [Time Complexity (시간 복잡도)](#time-complexity-시간-복잡도)
     - [Space Complexity (공간 복잡도)](#space-complexity-공간-복잡도)
+  - [ADT (Abstract Data Type)란](#adt-abstract-data-type란)
   - [List](#list)
   - [Stack](#stack)
   - [Queue](#queue)
   - [Tree](#tree)
   - [Heap](#heap)
   - [Map](#map)
+    - [Hash Map](#hash-map)
 
 비전공자여도 프로그래밍 시 데이터 구조의 기본을 모르면 `Map`과 같은 라이브러리를 필요할 때 사용하기 힘듭니다. 사칙연산 수준의 수학만으로 간단히 개념만 잡고 가겠습니다.
 
@@ -17,7 +19,7 @@
 
 ## Complexity (복잡도)
 
-데이터 구조를 분석하기 위해선 간단히 Complexity (복잡도란)에 대해 알아야 합니다.
+데이터 구조를 분석하기 위해선 간단히 [Complexity]() (복잡도란)에 대해 알아야 합니다.
 
 알로기즘의 complexity란 그걸 실행하기 위해 필요한 리소스(자원)의 양을 말합니다.
 
@@ -38,6 +40,12 @@
 
 따라서 흔히 complexity를 계산한다고 할 때 time complexity를 위주로 보며 space complexity는 참고 자료 정도로 쓰이는 정도입니다.
 
+## ADT (Abstract Data Type)란
+
+ADT는 실제 컴퓨터의 메모리를 잡아먹는 것이 아닌 abstract(추상적)으로 정의된 데이터 타입을 의미합니다.
+
+예를 들어 Hash Map이란 ADT를 Java에서는 `HashMap`으로 구현합니다.
+
 ## List
 
 List는
@@ -46,12 +54,34 @@ List는
 
 **LIFO(Last In Last Out)**
 
+책이 쌓여 있다고(Stacked) 생각해 봅시다.
+
 ## Queue
 
 **FIFO(First In First Out)**
+
+식당에서 줄을 서 있다고(Queued) 생각해 봅시다
 
 ## Tree
 
 ## Heap
 
+Heap이란
+
 ## Map
+
+**[Map](https://en.wikipedia.org/wiki/Associative_array)은 key/value pair(쌍)을 저장하는 ADT입니다.**
+
+**Dictionary**(파이썬 등), **key-value store**(key와 value쌍으로 보관하는 성질), associative array(수학적인 정의), symbol table 등으로도 불립니다.
+
+- 참고: Store(또는 data store)라는 표현을 자주 보게 될텐데 말 그대로 데이터 저장 공간을 의미합니다. Object나 Data Structure(Map, Array...), DB(SQLite, PostgreSQL, MongoDB, Redis 등), LocalStorage/SessionStorage(브라우저) 등의 다양한 데이터 스토리지 등을 말합니다.
+
+Map의 경우 메모리를 써서 Time Complexity를 줄인다 생각하면 편합니다.
+
+### Hash Map
+
+**Hash function** //TODO
+**hash value** //TODO
+
+**일반적인 경우 Hash Map은 Search, Insert, Delete의 complexity가 O(1)입니다.**
+**Hash Collision(충돌)**의 경우 `O(n)`까지 Time Complexity가 갈 수 있으나 현대적인 Hash Map의 경우 이를 방지하기 위해 여러 장치가 되어 있습니다.
