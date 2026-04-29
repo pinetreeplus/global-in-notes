@@ -449,7 +449,7 @@ Nested Loop는 **여러 루프문이 중첩**되어 있는 것입니다 (e.g`for
 
 참고: Nested Loop의 경우 2개의 경우 `O(n^2)`, 3개이면 `O(n^3)` 식으로 `Time Complexity(시간 복잡도)`가 올라갑니다. 입력 데이터(`n`부분)이 작다면 상관 없지만 커진다면:
 
-- 순서를 유지할 필요가 없다면 `Map` 구조의 적합한 Data Structure (탐색시 Average case(평균) Time Complexity `O(1)`, Worst Case(Hash Collision의 경우)는 `O(n)`).
+- 순서를 유지할 필요가 없다면 `Map` 구조의 적합한 Data Structure (Hash Map의 경우 Search, Insert, Delete시 일반적으로 `O(1)`, Hash Collision의 경우는 `O(n)`).
 - 순서가 필요하거나 범위를 지정해야 하는 경우 `Tree` 중에서 찾는게 좋을 수 있습니다.
 - Nested Loop를 쓰는 경우에도 목적 완료시 `break` 등을 통해 loop를 빠져나오게 하는 편이 Average Complexity 라도 줄일 수 있습니다.
 
