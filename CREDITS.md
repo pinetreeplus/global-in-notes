@@ -41,7 +41,7 @@
             <td>Public Domain</td>                                    
         </tr>
         <tr>
-            <td rowspan=6>cs-basics/images</td>
+            <td rowspan=8>cs-basics/images</td>
             <td>Data_Queue.svg.png</td>
             <td><a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)#/media/File:Data_Queue.svg">wikipedia</a></td>
             <td>CC BY-SA 3.0</td>                                    
@@ -70,7 +70,18 @@
             <td>AVLtreef.svg.png</td>
             <td><a href="https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree#/media/File:AVLtreef.svg">wikipedia</a></td>
             <td>Public Domain</td>                                    
-        </tr>                                                
+        </tr>      
+        <tr>
+            <td>B-tree.svg.png</td>
+            <td><a href="https://en.wikipedia.org/wiki/B-tree#/media/File:B-tree.svg">wikipedia</a></td>
+            <td>CC BY-SA 3.0<td>                                    
+        <tr>      
+        <tr>
+            <td>AVL-tree-wBalance_K.svg.png</td>
+            <td><a href="https://en.wikipedia.org/wiki/AVL_tree#/media/File:AVL-tree-wBalance_K.svg">wikipedia</a></td>
+            <td>CC BY-SA 4.0<td>                                    
+        <tr>                                                         
     </tbody>    
 </table>
 
+B-tree.svg.png
