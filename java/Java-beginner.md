@@ -369,6 +369,14 @@ if (magica == 2) {
 }
 ```
 
+간단한 logic의 경우 **`?`와 `:`을 이용한 ternary operator(삼항 연산자)**로 한 줄로 표현되기도 합니다.형식은 `variable = <조건>?<true시 실행>:<false시 실행>` 이며
+
+```java
+String magician = (magica==2)?("대마법사"):("대마법사가 아님");
+```
+
+처럼 표현이 가능합니다. `if`와 `else`만 있다 생각하시면 됩니다.
+
 ### for statement
 
 `for(init;condition;exec){}`형식의 반복문입니다 `init`은 초기실행코드, `exec`는 매 루프 실행코드이며 `condition`이 `true`일 동안 실행됩니다.

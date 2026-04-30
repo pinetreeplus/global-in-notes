@@ -402,7 +402,6 @@ abstract class Game{
 - Class의 property가 `get`, `set`, `is`,`to`와 `access methods`(Getter), `mutator methods`(Setter)를 표준화된 naming convention(이름 짓는 관습)에 따라 access 가능해야 합니다.
 - Class가 serializable해야 합니다. (`java.io.Serializable` 등 사용)
 
-
 ## Access Modifier
 
 Access Modifier란 Java의 Class, method, variable, constructor 등의 **접근 권한**을 설정하는 keyword입니다. Encapsulation과 깊은 관계가 있습니다.
