@@ -11,6 +11,7 @@
     - [Primitive Type](#primitive-type)
     - [Non-Primitive Type](#non-primitive-type)
   - [변수](#변수)
+  - [변수의 scope](#변수의-scope)
   - [Array](#array)
   - [String](#string)
     - [R(Read)](#rread)
@@ -192,6 +193,24 @@ myNum = 1;
 
 // 선언과 할당 동시에!
 int anotherNum = 10;
+```
+
+## 변수의 scope
+
+Java의 경우 변수의 scope(범위)이 block 단위입니다.
+
+```java
+String comment = "바깥";
+
+while (count<10) {
+  int count = 0;
+}
+
+// 바깥 출력
+System.out.println(comment);
+// while loop안에서 설정된 count는 while문이 종료되면서 사라집니다.
+// 따라서 아래는 에러가 납니다.
+System.out.println(count);
 ```
 
 ## Array
