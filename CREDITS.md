@@ -100,6 +100,31 @@
             <td>2D_array_diagram.svg.png</td>
             <td><a href="https://en.wikipedia.org/wiki/Array_(data_structure)#/media/File:2D_array_diagram.svg">wikipedia</a></td>
             <td>CC BY 4.0</td>                                    
-        </tr>                    
+        </tr>            
+        <tr>
+            <td>Bubblesort-edited-color.svg.png</td>
+            <td><a href="https://en.wikipedia.org/wiki/Bubble_sort#/media/File:Bubblesort-edited-color.svg">wikipedia</a></td>
+            <td>CC0</td>                                    
+        </tr>
+        <tr>
+            <td>Merge-sort-example-300px.gif</td>
+            <td><a href="https://en.wikipedia.org/wiki/Merge_sort#/media/File:Merge-sort-example-300px.gif">wikipedia</a></td>
+            <td>CC BY-SA 3.0</td>                                    
+        </tr>    
+        <tr>
+            <td>Sorting_quicksort_anim.gif</td>
+            <td><a href="https://en.wikipedia.org/wiki/Quicksort#/media/File:Sorting_quicksort_anim.gif">wikipedia</a></td>
+            <td>CC BY-SA 3.0</td>                                    
+        </tr>    
+        <tr>
+            <td>Insertion_sort.gif</td>
+            <td><a href="https://en.wikipedia.org/wiki/Insertion_sort#/media/File:Insertion_sort.gif">wikipedia</a></td>
+            <td>CC BY-SA 3.0</td>                                    
+        </tr>    
+        <tr>
+            <td>Sorting_heapsort_anim.gif</td>
+            <td><a href="https://en.wikipedia.org/wiki/Heapsort#/media/File:Sorting_heapsort_anim.gif">wikipedia</a></td>
+            <td>CC BY-SA 3.0</td>                                    
+        </tr>                                                      
     </tbody>    
 </table>
