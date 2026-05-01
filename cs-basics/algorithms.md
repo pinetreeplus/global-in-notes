@@ -20,11 +20,13 @@
 
 인터뷰시 가장 많이 나올 sorting 알고리즘 5가지를 위주로 알아보겠습니다.
 
+시간이 없고 문제 해결 시 사용만을 원할 시 [merge sort](#merge-sort), 질문시 한 번 비교 정도는 하고 싶다 하시면 [quick sort](#quick-sort)까지만 보셔도 됩니다.
+
 ### bubble sort
 
 <img src="./images/Bubblesort-edited-color.svg.png" width="500"/>
 
-**input 받은 리스트를 돌면서, 현재 값을 다음 값과 비교하면서, 필요시 둘의 값을 swap(교체)하는 것입니다.**. 이 작업을 리스트가 더 이상 swap이 필요 없을때까지 반복합니다. 
+**[Bubble sort](https://en.wikipedia.org/wiki/Bubble_sort)는 input 받은 리스트를 돌면서, 현재 값을 다음 값과 비교하면서, 필요시 둘의 값을 swap(교체)하는 것입니다.**. 이 작업을 리스트가 더 이상 swap이 필요 없을때까지 반복합니다. 
 
 **Worst case 시간복잡도는 비교와 swap(교체) 모두 `O(n^2)`입니다.**
 
@@ -54,14 +56,28 @@ end procedure
 
 <img src="./images/Merge-sort-example-300px.gif" width="500"/>
 
+
+
+**[Merge sort](https://en.wikipedia.org/wiki/Merge_sort)는 가장 흔히 쓰이는 comparison(비교) 기반 sorting 알고리즘** 중 하나입니다. 대부분의 구현 방식은 [`stable`](https://en.wikipedia.org/wiki/Sorting_algorithm#Stability)을 사용합니다.
+
+**Worst case 시간복잡도는 `O(n log n)`입니다.**. 때문에 **최악의 경우에도 가장 안정적**으로 사용 가능한 sort 중 하나입니다.
+
 ### quick sort
 
 <img src="./images/Sorting_quicksort_anim.gif" width="500"/>
+
+**[Quick sort](https://en.wikipedia.org/wiki/Quicksort)는 **
+
+**Worst case 시간복잡도는 `O(n^2)`이지만 실제로는 merge sort보다 빠른 경우가 많습니다..**
 
 ### insertion sort
 
 <img src="./images/Insertion_sort.gif" width="500"/>
 
+**[Insertion sort](https://en.wikipedia.org/wiki/Insertion_sort)는**
+
 ### heap sort
 
 <img src="./images/Sorting_heapsort_anim.gif" width="500"/>
+
+**[Heap sort](https://en.wikipedia.org/wiki/Heapsort)는**
