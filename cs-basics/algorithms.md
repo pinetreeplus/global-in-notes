@@ -22,6 +22,13 @@
 
 <img src="./images/Bubblesort-edited-color.svg.png" width="500"/>
 
+**input 받은 리스트를 돌면서, 현재 값을 다음 값과 비교하면서, 필요시 둘의 값을 swap(교체)하는 것입니다.**. 이 작업을 리스트가 더 이상 swap이 필요 없을때까지 반복합니다. 
+
+**Worst case 시간복잡도는 비교와 swap(교체) 모두 `O(n^2)`입니다.**
+
+- 참고1: 인터뷰에서 **Merge sort와 quick sort 대신 쓸 이유는 일반적으로 없고** 공간복잡도(메모리 이용량)가 `O(1)` 라는 것이 이득이기는 하나 둘의 시간 복잡도가 `O(n log n)`이어서 일반적으로 대체 됩니다.
+- 참고2: Sinking sort라고도 불립니다
+
 ### merge sort
 
 <img src="./images/Merge-sort-example-300px.gif" width="500"/>
