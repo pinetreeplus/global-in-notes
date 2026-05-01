@@ -41,7 +41,7 @@
             <td>Public Domain</td>                                    
         </tr>
         <tr>
-            <td rowspan=12>cs-basics/images</td>
+            <td rowspan=17>cs-basics/images</td>
             <td>Data_Queue.svg.png</td>
             <td><a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)#/media/File:Data_Queue.svg">wikipedia</a></td>
             <td>CC BY-SA 3.0</td>                                    
