@@ -20,7 +20,7 @@
 
 인터뷰시 가장 많이 나올 sorting 알고리즘 5가지를 위주로 알아보겠습니다.
 
-시간이 없고 문제 해결 시 사용만을 원할 시 [merge sort](#merge-sort), 질문시 한 번 비교 정도는 하고 싶다 하시면 [quick sort](#quick-sort)까지만 보셔도 됩니다.
+참고 :시간이 없고 문제 해결 시 **사용만을 원할 시 [merge sort](#merge-sort)**, 질문시 한 번 **비교 정도는 하고 싶다면 [quick sort](#quick-sort)까지**만 보셔도 됩니다.
 
 ### bubble sort
 
@@ -30,7 +30,7 @@
 
 **Worst case 시간복잡도는 비교와 swap(교체) 모두 `O(n^2)`입니다.**
 
-- 참고1: 인터뷰에서 **Merge sort와 quick sort 대신 쓸 이유는 일반적으로 없고** 공간복잡도(메모리 이용량)가 `O(1)` 라는 것이 이득이기는 하나 둘의 시간 복잡도가 `O(n log n)`이어서 일반적으로 대체 됩니다.
+- 참고1: 인터뷰에서 **Merge sort와 quick sort 대신 쓸 이유는 일반적으로 없고** 공간복잡도(메모리 이용량)가 `O(1)` 라는 것이 이득이기는 하나 시간 복잡도가 `O(n log n)`인 Merge Sort나 실무 시 그 보다 빠른 경우가 잦은 quick sort로 대체됩니다.
 - 참고2: Sinking sort라고도 불립니다
 
 
